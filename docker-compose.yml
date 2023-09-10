@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  portfolio-frontend:
+    build: ./portfolio-page
+    ports:
+      - 3000:3000
+    environment:
+      - NODE_ENV=development
+    restart: on-failure:5
+    command: > 
+      sh -c "bun install && bun run dev"
